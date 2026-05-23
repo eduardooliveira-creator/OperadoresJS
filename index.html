@@ -1,147 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Exercícios em JavaScript</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    section {
-      margin-bottom: 30px;
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-    h2 {
-      margin-top: 0;
-    }
-    footer,header{
-        text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header>
+  <header>
     <h1>Lista de Exercícios</h1>
-</header>
-<main>
+  </header>
+  <main>
     <section>
-        <h2>exercício - 1</h2>
-        <input type="text" id="nome" placeholder="Digite seu nome">
-        <button onclick="saudar()">Enviar</button>
-        <p id="mensagem"></p>
+      <h2>exercício - 1</h2>
+      <input type="text" id="nome" placeholder="Digite seu nome">
+      <button onclick="saudar()">Enviar</button>
+      <p id="mensagem"></p>
     </section>
 
     <section>
-        <h2>exercício - 2</h2>
-        <input type="number" id="idade" placeholder="Digite sua idade">
-        <button onclick="verificarIdade()">Verificar</button>
-        <p id="resultadoIdade"></p>
+      <h2>exercício - 2</h2>
+      <input type="number" id="idade" placeholder="Digite sua idade">
+      <button onclick="verificarIdade()">Verificar</button>
+      <p id="resultadoIdade"></p>
     </section>
 
-  <section>
-        <h2>exercício - 3</h2>
-        <input type="number" id="numeroParImpar" placeholder="Digite um número">
-        <button onclick="verificarParOuImpar()">Verificar</button>
-        <p id="resultadoParImpar"></p>
-  </section>
+    <section>
+      <h2>exercício - 3</h2>
+      <input type="number" id="numeroParImpar" placeholder="Digite um número">
+      <button onclick="verificarParOuImpar()">Verificar</button>
+      <p id="resultadoParImpar"></p>
+    </section>
 
-  <section>
-        <h2>exercício - 4</h2>
-        <button onclick="mostrarNumeros()">Mostrar</button>
-        <p id="numerosDe1a10"></p>
-  </section>
+    <section>
+      <h2>exercício - 4</h2>
+      <button onclick="mostrarNumeros()">Mostrar</button>
+      <p id="numerosDe1a10"></p>
+    </section>
 
-  <section>
-        <h2>exercício - 5</h2>
-        <input type="number" id="numContagem" placeholder="Digite um número">
-        <button onclick="contagemRegressiva()">Contar</button>
-        <p id="resultadoContagem"></p>
-  </section>
+    <section>
+      <h2>exercício - 5</h2>
+      <input type="number" id="numContagem" placeholder="Digite um número">
+      <button onclick="contagemRegressiva()">Contar</button>
+      <p id="resultadoContagem"></p>
+    </section>
 
-  <section>
-        <h2>exercício - 6</h2>
-        <input type="number" id="numeroTabuada" placeholder="Digite um número">
-        <button onclick="tab()">Mostrar Tabuada</button>
-        <div id="tabuadaResultado"></div>
-  </section>
+    <section>
+      <h2>exercício - 6</h2>
+      <input type="number" id="numeroTabuada" placeholder="Digite um número">
+      <button onclick="tab()">Mostrar Tabuada</button>
+      <div id="tabuadaResultado"></div>
+    </section>
 
-  <section>
-    <h2>exercício - 7</h2>
-    <p>Digite 5 números:</p>
-    <button onclick="somarNumeros()">Somar</button>
-    <p id="resultadoSoma"></p>
-  </section>
-</main>
-<footer>
+    <section>
+      <h2>exercício - 7</h2>
+      <p>Digite 5 números:</p>
+      <button onclick="somarNumeros()">Somar</button>
+      <p id="resultadoSoma"></p>
+    </section>
+  </main>
+  <footer>
     <h2>Eduardo Oliveira de Moraes</h2>
-</footer>
-  <script>
-    function saudar(){
-      let nome = document.getElementById("nome").value;
-      document.getElementById("mensagem").innerText = "Olá, " + nome + " ! ";
-    }
-
-    function verificarIdade() {
-      let idade = parseInt(document.getElementById("idade").value);
-      if(idade >= 18){
-        document.getElementById("resultadoIdade").innerText = "Você é maior de idade.";
-    }
-      else{
-      document.getElementById("resultadoIdade").innerText = "Você é menor de idade.";
-        }
-}
-
-    function verificarParOuImpar() {
-      let numero = parseInt(document.getElementById("numeroParImpar").value);
-      if(numero % 2 == 0){ 
-      document.getElementById("resultadoParImpar").innerText = "O número é par.";
-    }
-    else{
-        document.getElementById("resultadoParImpar").innerText = "O número é ímpar.";
-    }
-}
-    function mostrarNumeros() {
-      let resultado = "";
-      for (let i = 1; i <= 10; i++) {
-        resultado += i + " ";
-      }
-      document.getElementById("numerosDe1a10").innerText = resultado;
-    }
-
-    function contagemRegressiva() {
-      const num = parseInt(document.getElementById("numContagem").value);
-      let resultado = "";
-      for (let i = num; i >= 0; i--) {
-        resultado += i + " ";
-      }
-      document.getElementById("resultadoContagem").innerText = resultado;
-    }
-
-    function tab(){
-         let num = document.getElementById("numeroTabuada").value;
-         let cont = 1;
-        let resul = " ";
-        while(cont <= 10){
-        resul += (cont + ' X ' + num + " " + " = "  + cont * num + " | ");
-            cont++;
-        }
-            document.getElementById("tabuadaResultado").innerText = resul;
-        };
-
-    function somarNumeros(){;
-        let cont = 1;
-        let soma = 0;
-        let resul = " ";
-        while(cont <= 5){
-            num = parseInt(prompt('Informe o ' + cont + 'º número'));
-            soma += num;
-            resul = soma;
-            cont++;
-        }
-            document.getElementById("resultadoSoma").innerText = resul;
-        };
-  </script>
+  </footer>
+  <script src="Script.js"></script>
 </body>
+
 </html>
