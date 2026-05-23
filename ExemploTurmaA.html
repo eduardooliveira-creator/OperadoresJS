@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos em JavaScript</title>
+    <style>
+        section{
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        label, input, button{
+            display: block;
+            margin: 10px 0;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Exemplos em JavaScript</h1>
+    </section>
+    <section>
+        <h2>Exemplo 1 - Estrutura simples</h2>
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" id="nome" placeholder="Digite seu nome">
+        <button onclick="exibirNome()">Enviar</button>
+        <p id="resultado"></p>
+
+        <script>
+            function exibirNome(){
+                let nome = document.getElementById("nome").value;
+                document.getElementById("resultado").innerHTML = 
+                "Olá, " + nome + " ! ";
+            }
+        </script>
+    </section>
+
+    <section>
+        <h2>Exemplo 2- Estrutura de decisão</h2>
+        <input type="number" id="nota" placeholder="Digite sua nota">
+        <button onclick="verificarNota()">Verificar</button>
+        <p id="resultado2"></p>
+
+        <script>
+            function verificarNota(){
+                let nota = document.getElementById("nota").value;
+                if (nota >= 6){
+                    document.getElementById("resultado2").innerText = "Aprovado!";
+                }else{
+                    document.getElementById("resultado2").innerText = "Reprovado!";
+                }
+            }
+        </script>
+    </section>
+    
+    <section>
+        <h2>Exemplo 3 - Estrutura de repetição (FOR)</h2>
+        <button onclick="mostrarNumeros()">Mostrar Números</button>
+        <p id="resultado3"></p>
+        <script>
+            function mostrarNumeros(){
+                let numero = " ";
+                for(let i = 1; i <= 5; i++){
+                    numero += i + " ";
+                }
+                document.getElementById("resultado3").innerText = numero;
+            }
+        </script>
+    </section>
+
+    <section>
+        <h2>Exemplo 4 - Estrutura de repetição (while)</h2>
+        <button onclick="contarRegressivo()">Contagem Regressiva</button>
+        <p id="resultado4"></p>
+        <script>
+            function contarRegressivo(){
+                let cont = 5;
+                let resul = " ";
+                while(cont >= 0){
+                    resul += cont + " ";
+                    cont--;
+                }
+                document.getElementById("resultado4").innerText = resul;
+            }
+        </script>
+    </section>
+    
+</body>
+</html>
